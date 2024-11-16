@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Car Management Application</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Authentication Section -->
+  <div id="auth">
+    <h2>Car Management App</h2>
+    <h3 id="auth-title">Login / Signup</h3>
+    <div>
+      <label for="username">Username:</label>
+      <input type="text" id="username" placeholder="Enter Username" required>
+    </div>
+    <div>
+      <label for="password">Password:</label>
+      <input type="password" id="password" placeholder="Enter Password" required>
+    </div>
+    <button onclick="signup()">Sign Up</button>
+    <button onclick="login()">Login</button>
+    <p>
+      <a href="#" onclick="showForgotPassword()">Forgot Password?</a>
+    </p>
+  </div>
+
+  <!-- Forgot Password Section -->
+  <div id="forgot-password" style="display: none;">
+    <h2>Forgot Password</h2>
+    <p>Enter your username to retrieve your password.</p>
+    <div>
+      <label for="forgot-username">Username:</label>
+      <input type="text" id="forgot-username" placeholder="Enter Username" required>
+    </div>
+    <button onclick="retrievePassword()">Retrieve Password</button>
+    <button onclick="backToAuth()">Back</button>
+  </div>
+
+  <!-- Dashboard Section -->
+  <div id="dashboard" style="display: none;">
+    <h2>Welcome, <span id="current-user"></span>!</h2>
+    <button onclick="logout()">Logout</button>
+
+    <!-- Add Car Form -->
+    <h3>Add a New Car</h3>
+    <div>
+      <label for="car-title">Car Title:</label>
+      <input type="text" id="car-title" placeholder="Enter Car Title" required>
+    </div>
+    <div>
+      <label for="car-description">Description:</label>
+      <textarea id="car-description" placeholder="Enter Car Description" required></textarea>
+    </div>
+    <div>
+      <label for="car-tags">Tags (comma-separated):</label>
+      <input type="text" id="car-tags" placeholder="e.g., Sedan, Toyota, Dealer">
+    </div>
+    <div>
+      <label for="car-images">Images (Max 10):</label>
+      <input type="file" id="car-images" accept="image/*" multiple>
+    </div>
+    <button onclick="addCar()">Add Car</button>
+
+    <!-- Search Bar -->
+    <h3>Your Cars</h3>
+    <input type="text" id="search" placeholder="Search cars by title, description, or tags" oninput="searchCars()">
+
+    <!-- Car List -->
+    <div id="car-list"></div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
+
+
+
+
